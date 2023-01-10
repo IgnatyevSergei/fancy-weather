@@ -1,0 +1,35 @@
+.btn{
+    width: 44px;
+    height: inherit;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    border-radius: 5px;
+    border: none;
+    background: rgba(174, 181, 185, 0.5);
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+}
+
+
+.btn:disabled{
+    background: rgba(76, 82, 85, 0.4);
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.btn:active{
+    background: rgba(174, 181, 185, 0.5);
+    color: #FFFFFF;
+}

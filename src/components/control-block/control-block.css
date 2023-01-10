@@ -1,0 +1,6 @@
+.control-block-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 223px;
+    height: 100%;
+}

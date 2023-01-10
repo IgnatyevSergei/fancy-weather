@@ -1,0 +1,17 @@
+.refresh-bg{
+    height: 100%;
+    background: rgba(180, 184, 187, 0.4);
+    border-radius: 5px;
+
+}
+.refresh-bg-wrapper_btn{
+    width: 44px;
+    height: inherit;
+    background: rgba(180, 184, 187, 0.4);
+    border-radius: 5px;
+    border-color: rgba(180, 184, 187, 0.4);;
+}
+.vector-btn{
+    width: 15px;
+    height: 20px;
+}

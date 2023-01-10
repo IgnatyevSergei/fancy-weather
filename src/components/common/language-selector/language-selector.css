@@ -1,0 +1,18 @@
+.language-selector-wrapper{
+    width: 71px;
+    height: inherit;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    background: rgba(174, 181, 185, 0.5);
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+select {
+
+}
