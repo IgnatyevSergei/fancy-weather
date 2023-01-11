@@ -1,8 +1,6 @@
 .language-selector-wrapper{
     width: 71px;
     height: inherit;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
     font-weight: 700;
     font-size: 14px;
     line-height: 17px;
@@ -13,6 +11,4 @@
     text-align: center;
 }
 
-select {
 
-}

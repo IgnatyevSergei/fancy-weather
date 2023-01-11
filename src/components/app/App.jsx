@@ -2,8 +2,8 @@ import React from 'react';
 import ErrorBoundary from "../error-boundary";
 import Container from "../container";
 import Header from "../header";
-import Button from "../common/button";
 import Title from "../title";
+import WeatherToday from "../weather-today";
 
 const App = () => {
     return (
@@ -11,6 +11,7 @@ const App = () => {
             <Container>
                 <Header/>
                 <Title/>
+                <WeatherToday/>
             </Container>
         </ErrorBoundary>
     );

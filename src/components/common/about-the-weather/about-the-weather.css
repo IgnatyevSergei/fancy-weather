@@ -1,0 +1,15 @@
+.about-the-weather-wrapper{
+    display: flex;
+    width: 175px;
+    height: 137px;
+    flex-direction: column;
+    color: #FFFFFF;
+    position: absolute;
+    top: 154px;
+    left: 422px;
+
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 37px;
+
+}

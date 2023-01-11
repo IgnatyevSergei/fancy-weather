@@ -1,16 +1,14 @@
-.title-wrapper{
+.title-wrapper {
     display: flex;
     flex-direction: column;
     width: 396px;
     height: 87px;
     margin-top: 17px;
     margin-left: 90px;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
     color: #FFFFFF;
 }
 
-.country{
+.country {
     margin: 0;
     height: 54px;
     font-weight: 700;
@@ -19,7 +17,7 @@
 
 }
 
-.day-and-time{
+.day-and-time {
     margin: 0;
     height: 29px;
     font-weight: 600;

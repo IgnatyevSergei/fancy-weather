@@ -1,0 +1,46 @@
+.weather-today-wrapper {
+    width: 597px;
+    height: 373px;
+    position: absolute;
+    top: 223px;
+    left: 90px;
+
+
+}
+
+.weather-today-block{
+    display: flex;
+}
+
+.number {
+    width: 330px;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 306px;
+    line-height: 373px;
+    color: #FFFFFF;
+
+}
+
+.information-block{
+    width: 267px;
+    height: inherit;
+}
+
+.information-block_degree-sign{
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 0px;
+    color: #FFFFFF;
+    position: absolute;
+    top: 110px;
+    left: 348px;
+}
+
+.image-cloud{
+    width: 162.5px;
+    height: 102.6px;
+}
