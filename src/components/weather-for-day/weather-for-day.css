@@ -1,0 +1,25 @@
+.weather-for-day-wrapper{
+    width: 160px;
+    height: 107px;
+}
+
+.day{
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.temperature{
+    display: flex;
+    justify-content: space-between;
+}
+
+.temperature-degrees{
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 98px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
