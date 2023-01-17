@@ -4,18 +4,22 @@ import Container from "../container";
 import Header from "../header";
 import Title from "../title";
 import WeatherToday from "../weather-today";
-import WeatherForThreeDay from "../weather-for-three-day/weather-for-three-day";
+import WeatherForThreeDay from "../weather-for-three-day";
+import {Provider} from "react-redux";
+import store from "../../store";
 
 const App = () => {
     return (
-        <ErrorBoundary>
-            <Container>
-                <Header/>
-                <Title/>
-                <WeatherToday/>
-                <WeatherForThreeDay/>
-            </Container>
-        </ErrorBoundary>
+        <Provider store={store}>
+            <ErrorBoundary>
+                <Container>
+                    <Header/>
+                    <Title/>
+                    <WeatherToday/>
+                    <WeatherForThreeDay/>
+                </Container>
+            </ErrorBoundary>
+        </Provider>
     );
 };
 
