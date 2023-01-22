@@ -1,41 +1,8 @@
-const initialState ={
-    city: '',
-    country: '',
-    latitude: '',
-    longitude: '',
-    toDay:{
-        date: '',
-        day: '',
-        temperature: '',
-        weather: '',
-        feelLike: '',
-        wind: '',
-        humidity: ''
-    },
-    secondDay:{
-        date: '',
-        day: '',
-        temperature: '',
-        weather: '',
-    },
-    thirdDay:{
-        date: '',
-        day: '',
-        temperature: '',
-        weather: '',
-    },
-    fourthDay:{
-        date: '',
-        day: '',
-        temperature: '',
-        weather: '',
-    }
-}
+import {buttonReducer} from './button-reducer';
+import {weatherReducer} from './weather-reducer'
+import {combineReducers} from "redux";
 
-const reducer = (state = initialState, action) => {
-
-}
-
-
-export default reducer
-
+export const combineReducerStore = combineReducers({
+    weatherReducer,
+    buttonReducer
+})

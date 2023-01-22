@@ -2,7 +2,7 @@ import React from 'react';
 import './button.css'
 
 const Button = (props) => {
-    const {text, disabled, width, height, image} =props
+    const {text, disabled, width, height, image, onClick} =props
 
     const style = {
         width: width,
@@ -11,12 +11,19 @@ const Button = (props) => {
 
 
     return (
-        <>
-        <button disabled={disabled} className='btn' style={style}>
-            {text}<img src={image} />
+      <>
+        <button
+          disabled={disabled}
+          onClick={onClick}
+          className="btn"
+          style={style}
+        >
+          {text}
+          <img src={image} />
         </button>
-        </>
+      </>
+      
     );
 };
 
-export default Button;
+export default React.memo(Button);

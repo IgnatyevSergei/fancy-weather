@@ -1,13 +1,37 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import './title.css'
+import {useSelector} from "react-redux";
 
 const Title = () => {
+    const {weather, isLoading} = useSelector(state => state.weatherReducer)
+    const date =  new Date()
+    const options = { weekday: 'long', day: 'numeric', month: 'long'};
+
+    const now = date.toLocaleString('ru', options);
+
+
+
+    console.log(weather)
+
+    const content = () => {
+        if (isLoading === null) {
+            return
+        }
+        if (isLoading) {
+            return
+        }
+
+        return <div className='title-wrapper'>
+            <h3 className='country'>{weather.city}, {weather.country}</h3>
+            <h4 className='day-and-time'>{now} </h4>
+        </div>
+
+
+    }
+
     return (
         <>
-        <div className='title-wrapper'>
-            <h3 className='country'>MINSK, BELARUS</h3>
-            <h4 className='day-and-time'>Mon 28 October 17:23 </h4>
-        </div>
+            {content()}
         </>
     );
 };
