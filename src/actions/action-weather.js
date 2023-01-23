@@ -72,8 +72,8 @@ const transformWeatherData = (result) => {
   };
 };
 
-export const getWeatherForCity = (city) => (dispatch) => {
-  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=ru&units=metric&appid=1eda4925bba4dba27573fa566872cb30`;
+export const getWeatherForCity = (city, lang, degrees) => (dispatch) => {
+  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=${lang}&units=${degrees}&appid=1eda4925bba4dba27573fa566872cb30`;
   dispatch(setIsLoadingAC(true));
   fetch(url)
     .then((response) => response.json())

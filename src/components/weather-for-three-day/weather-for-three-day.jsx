@@ -2,9 +2,10 @@ import React, {useMemo} from 'react';
 import './weather-for-three-day.css'
 import WeatherForDay from "../weather-for-day";
 import { useSelector } from 'react-redux';
+import {weatherSelector} from "../../selectors/weather-selector";
 
 const WeatherForThreeDay = () => {
-const {weather, isLoading} = useSelector(state=>state.weatherReducer);
+const {weather, isLoading} = useSelector(weatherSelector);
 
 const content = useMemo(() => {
     if(isLoading===null) {

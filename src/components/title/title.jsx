@@ -1,17 +1,14 @@
-import React, {useMemo} from 'react';
+import React from 'react';
 import './title.css'
 import {useSelector} from "react-redux";
+import {weatherSelector} from "../../selectors/weather-selector";
 
 const Title = () => {
-    const {weather, isLoading} = useSelector(state => state.weatherReducer)
+    const {weather, isLoading} = useSelector(weatherSelector)
     const date =  new Date()
     const options = { weekday: 'long', day: 'numeric', month: 'long'};
-
     const now = date.toLocaleString('ru', options);
 
-
-
-    console.log(weather)
 
     const content = () => {
         if (isLoading === null) {

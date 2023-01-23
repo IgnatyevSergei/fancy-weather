@@ -18,12 +18,12 @@ const Button = (props) => {
           className="btn"
           style={style}
         >
-          {text}
-          <img src={image} />
+          {text || <img src={image} alt='image' />}
+
         </button>
       </>
       
     );
 };
 
-export default React.memo(Button);
+export default React.memo(Button) ;

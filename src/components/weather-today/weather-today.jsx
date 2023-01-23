@@ -3,9 +3,10 @@ import './weather-today.css'
 import AboutTheWeather from "../common/about-the-weather";
 import Cloud from '../../assets/picture/Group 26.png'
 import {useSelector} from "react-redux";
+import {weatherSelector} from "../../selectors/weather-selector";
 
 const WeatherToday = () => {
-    const {weather, isLoading} = useSelector(state => state.weatherReducer)
+    const {weather, isLoading} = useSelector(weatherSelector)
 
     const content = useMemo(() => {
         if (isLoading === null) {
