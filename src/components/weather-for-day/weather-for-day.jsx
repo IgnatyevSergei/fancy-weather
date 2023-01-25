@@ -9,10 +9,6 @@ const WeatherForDay = (props) => {
     const {lang} = useSelector(buttonSelector)
     const options = { weekday: 'long'};
 
-    console.log(date.toLocaleString('en',options))
-
-
-
 
     return (
 

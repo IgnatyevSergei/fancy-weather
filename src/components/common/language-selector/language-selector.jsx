@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {buttonSelector} from "../../../selectors/button-selector";
 import Option from "../option/option";
@@ -17,32 +17,38 @@ const LanguageSelector = () => {
     const dispatch = useDispatch();
     const {lang, degrees} = useSelector(buttonSelector);
     const {weather} = useSelector(weatherSelector)
+    const language = useRef(selectLang)
+
+    useEffect(()=>{
+        language.current = selectLang
+
+    })
+
+    console.log(lang, 'lang')
+    console.log(language.current, 'language.current')
+    console.log(selectLang, 'selectLang')
+
 
 
 
     const getData = () => {
-        dispatch(getWeatherForCity(weather.city, lang, degrees))
+        dispatch(getWeatherForCity(weather.city, language.current, degrees))
     }
 
-    console.log(lang, 'в начале компонента')
 
     const handleChangeLang = (e) => {
         setSelectLang(e.target.value)
-        if (selectLang === 'en') {
+        if (language.current === 'en') {
             dispatch(setEnglishAC())
         }
-        if (selectLang === 'ru') {
+        if (language.current === 'ru') {
             dispatch(setRussianAC())
         }
-        console.log(lang, 'перед запросом')
-
         getData()
-        console.log(lang, 'после запроса')
 
     }
 
 
-    console.log(lang)
 
 
     return (
