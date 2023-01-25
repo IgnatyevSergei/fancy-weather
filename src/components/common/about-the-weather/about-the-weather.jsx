@@ -1,9 +1,12 @@
 import React, {useMemo} from 'react';
 import './about-the-weather.css'
 import {useSelector} from "react-redux";
+import {weatherSelector} from "../../../selectors/weather-selector";
+import {buttonSelector} from "../../../selectors/button-selector";
 
 const AboutTheWeather = () => {
-    const {weather, isLoading} = useSelector(state => state.weatherReducer)
+    const {weather, isLoading} = useSelector(weatherSelector)
+    const {lang} = useSelector(buttonSelector)
 
     const content = useMemo(() => {
         if (isLoading === null) {
@@ -15,9 +18,9 @@ const AboutTheWeather = () => {
 
         return <div className='about-the-weather-wrapper'>
             <span>{weather.toDay.weather}</span>
-            <span>Ощущение: {weather.toDay.feelLike}°</span>
-            <span>Ветер: {weather.toDay.wind} м/с</span>
-            <span>Влажность: {weather.toDay.humidity}%</span>
+            <span>{lang==='en'?'feel like': 'Ощущение'}: {weather.toDay.feelLike}°</span>
+            <span>{lang==='en'?'wind': 'Ветер'}: {weather.toDay.wind} м/с</span>
+            <span>{lang==='en'?'humidity': 'Влажность'}: {weather.toDay.humidity}%</span>
         </div>
 
 

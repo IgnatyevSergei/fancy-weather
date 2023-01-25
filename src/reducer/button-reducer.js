@@ -1,4 +1,5 @@
 import {
+  SET_BACKGROUND,
   SET_CELSIUS,
   SET_ENGLISH,
   SET_FAHRENHEIT,
@@ -8,11 +9,16 @@ import {
 const initialStateButton = {
   lang: "en",
   background: "",
-  degrees: "",
+  degrees: "metric",
 };
 
 export const buttonReducer = (state = initialStateButton, action) => {
   switch (action.type) {
+    case SET_BACKGROUND:
+      return {
+        ...state,
+        background: action.payload
+      }
     case SET_ENGLISH:
       return {
         ...state,

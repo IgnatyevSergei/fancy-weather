@@ -7,6 +7,7 @@ import WeatherToday from "../weather-today";
 import WeatherForThreeDay from "../weather-for-three-day";
 import {Provider} from "react-redux";
 import store from "../../store";
+import Map from "../map";
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
                     <Title/>
                     <WeatherToday/>
                     <WeatherForThreeDay/>
+                    <Map/>
                 </Container>
             </ErrorBoundary>
         </Provider>

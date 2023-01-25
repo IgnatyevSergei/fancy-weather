@@ -2,12 +2,15 @@ import React from 'react';
 import './title.css'
 import {useSelector} from "react-redux";
 import {weatherSelector} from "../../selectors/weather-selector";
+import {buttonSelector} from "../../selectors/button-selector";
+import Clock from "../common/ clock";
 
 const Title = () => {
     const {weather, isLoading} = useSelector(weatherSelector)
+    const {lang} = useSelector(buttonSelector)
     const date =  new Date()
-    const options = { weekday: 'long', day: 'numeric', month: 'long'};
-    const now = date.toLocaleString('ru', options);
+    const options = { weekday: 'short', day: 'numeric', month: 'long'};
+    const now = date.toLocaleString(lang, options);
 
 
     const content = () => {
@@ -19,8 +22,8 @@ const Title = () => {
         }
 
         return <div className='title-wrapper'>
-            <h3 className='country'>{weather.city}, {weather.country}</h3>
-            <h4 className='day-and-time'>{now} </h4>
+            <h3 className='country'>{weather.city}, {weather.country}  </h3>
+            <h4 className='day-and-time'>{now} <Clock/> </h4>
         </div>
 
 

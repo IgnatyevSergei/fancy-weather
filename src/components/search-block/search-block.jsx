@@ -1,45 +1,37 @@
-import React, {useRef} from 'react';
-import './search-block.css'
+import React, {useEffect, useRef} from "react";
+import "./search-block.css";
 import Button from "../common/button";
-import {useDispatch, useSelector} from 'react-redux';
-import { getWeatherForCity } from '../../actions/action-weather';
+import {useDispatch, useSelector} from "react-redux";
+import {getCoordinate, getWeatherForCity} from "../../actions/action-weather";
 import {buttonSelector} from "../../selectors/button-selector";
-import {setFahrenheitAC} from "../../actions/action-button";
 
 const SearchBlock = () => {
-    const{degrees, lang}=useSelector(buttonSelector)
+    const {lang, degrees} = useSelector(buttonSelector);
+    const dispatch = useDispatch();
+    const inputRef = useRef();
 
-    const dispatch = useDispatch()
-    const inputRef = useRef()
+    useEffect(() => {
+      getCoordinate(lang, degrees, dispatch)
+    }, [])
 
-    const setDegrees = () => {
-        dispatch(setFahrenheitAC())
-    }
-
-    const getData =()=>{
-        setDegrees()
-            dispatch(getWeatherForCity(inputRef.current?.value, lang, 'metric'))
-        console.log(degrees, '2')
+    const getData = () => {
+        if (!inputRef.current?.value) {
+            return;
         }
+        dispatch(getWeatherForCity(inputRef.current?.value, lang, degrees));
 
-
-  
+    };
 
     return (
-      <div className="search-block">
-        <input
-          type="search"
-          ref={inputRef}
-          placeholder="Search city"
-          className="search-block_input"
-        />
-        <Button
-          text="SEARCH"
-          onClick={getData}
-          width="101px"
-          height="44px"
-        />
-      </div>
+        <div className="search-block">
+            <input
+                type="search"
+                ref={inputRef}
+                placeholder="Search city"
+                className="search-block_input"
+            />
+            <Button text="SEARCH" onClick={getData} width="101px" height="44px"/>
+        </div>
     );
 };
 

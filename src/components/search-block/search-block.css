@@ -23,3 +23,7 @@
     padding-left: 15px;
 }
 
+.search-block_input:focus{
+    outline: none;
+}
+
