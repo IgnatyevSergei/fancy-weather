@@ -1,7 +1,7 @@
 import React from 'react';
-import './button.css'
+import './controller.css'
 
-const Button = (props) => {
+const Controller = (props) => {
     const {text, disabled, width, height, image, onClick} =props
 
     const style = {
@@ -26,4 +26,4 @@ const Button = (props) => {
     );
 };
 
-export default React.memo(Button) ;
+export default React.memo(Controller) ;

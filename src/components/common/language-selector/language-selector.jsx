@@ -2,7 +2,7 @@ import React from "react";
 import {useDispatch} from "react-redux";
 import Option from "../option/option";
 import "./language-selector.css";
-import {setLangAC} from "../../../actions/action-button";
+import {setLangAC} from "../../../actions/button-action";
 
 const data = [
     {id: 1, text: "en", value: "en"},

@@ -1,4 +1,4 @@
-import { SET_IS_HAS_ERROR, SET_IS_LOADING, SET_WEATHER } from "../actions/action-weather";
+import { SET_IS_HAS_ERROR, SET_IS_LOADING, SET_WEATHER } from "../actions/weather-action";
 
 const initialState = {
   weather: {

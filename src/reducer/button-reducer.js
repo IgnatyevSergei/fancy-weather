@@ -2,7 +2,7 @@ import {
   SET_BACKGROUND,
   SET_CELSIUS,
   SET_FAHRENHEIT, SET_LANG,
-} from "../actions/action-button";
+} from "../actions/button-action";
 
 const initialStateButton = {
   lang: "en",

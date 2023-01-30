@@ -1,9 +1,9 @@
 import React, {useRef} from "react";
 import "./search-block.css";
-import Button from "../common/button";
 import {useDispatch, useSelector} from "react-redux";
-import {getWeatherForCity} from "../../actions/action-weather";
+import {getWeatherForCity} from "../../actions/weather-action";
 import {buttonSelector} from "../../selectors/button-selector";
+import Controller from "../common/controller";
 
 const SearchBlock = () => {
     const {lang, degrees} = useSelector(buttonSelector);
@@ -23,10 +23,10 @@ const SearchBlock = () => {
             <input
                 type="search"
                 ref={inputRef}
-                placeholder="Search city"
+                placeholder= {lang==='en'?'Search city': 'Введите город'}
                 className="search-block_input"
             />
-            <Button text="SEARCH" onClick={getData} width="101px" height="44px"/>
+            <Controller text={lang==='en'? "SEARCH": 'ПОИСК' }  onClick={getData} width="101px" height="44px"/>
         </div>
     );
 };
