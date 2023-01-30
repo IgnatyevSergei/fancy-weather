@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import './title.css'
 import {useSelector} from "react-redux";
 import {weatherSelector} from "../../selectors/weather-selector";
@@ -8,13 +8,16 @@ import Clock from "../common/ clock";
 const Title = () => {
     const {weather, isLoading} = useSelector(weatherSelector)
     const {lang} = useSelector(buttonSelector)
-    const date =  new Date()
+    const date =  new Date();
     const options = { weekday: 'short', day: 'numeric', month: 'long'};
     const now = date.toLocaleString(lang, options);
 
 
-    const content = () => {
+    const content = useMemo(() => {
         if (isLoading === null) {
+            return
+        }
+        if (!lang) {
             return
         }
         if (isLoading) {
@@ -24,14 +27,14 @@ const Title = () => {
         return <div className='title-wrapper'>
             <h3 className='country'>{weather.city}, {weather.country}  </h3>
             <h4 className='day-and-time'>{now} <Clock/> </h4>
-        </div>
+        </div>}, [weather])
 
 
-    }
+
 
     return (
         <>
-            {content()}
+            {content}
         </>
     );
 };

@@ -1,9 +1,9 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useCallback, useMemo} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {buttonSelector} from "../../../selectors/button-selector";
 import Option from "../option/option";
 import "./language-selector.css";
-import {setEnglishAC, setRussianAC} from "../../../actions/action-button";
+import {setLangAC} from "../../../actions/action-button";
 import {weatherSelector} from "../../../selectors/weather-selector";
 import {getWeatherForCity} from "../../../actions/action-weather";
 
@@ -13,46 +13,24 @@ const data = [
 ];
 
 const LanguageSelector = () => {
-    const [selectLang, setSelectLang] = useState('en')
     const dispatch = useDispatch();
-    const {lang, degrees} = useSelector(buttonSelector);
-    const {weather} = useSelector(weatherSelector)
-    const language = useRef(selectLang)
-
-    useEffect(()=>{
-        language.current = selectLang
-
-    })
+    const{lang, degrees}=useSelector(buttonSelector)
+    const{weather}=useSelector(weatherSelector)
 
     console.log(lang, 'lang')
-    console.log(language.current, 'language.current')
-    console.log(selectLang, 'selectLang')
-
-
-
-
-    const getData = () => {
-        dispatch(getWeatherForCity(weather.city, language.current, degrees))
-    }
+    console.log(weather)
 
 
     const handleChangeLang = (e) => {
-        setSelectLang(e.target.value)
-        if (language.current === 'en') {
-            dispatch(setEnglishAC())
-        }
-        if (language.current === 'ru') {
-            dispatch(setRussianAC())
-        }
-        getData()
 
+
+        dispatch(setLangAC(e.target.value));
+
+        dispatch(getWeatherForCity(weather.city, lang, degrees))
     }
 
-
-
-
     return (
-        <select value={selectLang} onChange={handleChangeLang} className="language-selector-wrapper">
+        <select  onChange={handleChangeLang} className="language-selector-wrapper">
             {data.map(({id, text, value}) => {
                 return <Option value={value} text={text} key={id}/>;
             })}

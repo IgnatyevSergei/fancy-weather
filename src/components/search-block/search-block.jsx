@@ -9,10 +9,12 @@ const SearchBlock = () => {
     const {lang, degrees} = useSelector(buttonSelector);
     const dispatch = useDispatch();
     const inputRef = useRef();
+    const state = useSelector(buttonSelector)
 
     useEffect(() => {
       getCoordinate(lang, degrees, dispatch)
     }, [])
+
 
     const getData = () => {
         if (!inputRef.current?.value) {
