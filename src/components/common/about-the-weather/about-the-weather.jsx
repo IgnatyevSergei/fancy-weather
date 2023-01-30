@@ -17,13 +17,11 @@ const AboutTheWeather = () => {
         }
 
         return <div className='about-the-weather-wrapper'>
-            <span>{weather.toDay.weather}</span>
-            <span>{lang==='en'?'feel like': 'Ощущение'}: {weather.toDay.feelLike}°</span>
-            <span>{lang==='en'?'wind': 'Ветер'}: {weather.toDay.wind} м/с</span>
-            <span>{lang==='en'?'humidity': 'Влажность'}: {weather.toDay.humidity}%</span>
+            <span>{weather?.toDay?.weather}</span>
+            <span>{lang==='en'?'feel like': 'Ощущение'}: {weather?.toDay?.feelLike}°</span>
+            <span>{lang==='en'?'wind': 'Ветер'}: {weather?.toDay?.wind} м/с</span>
+            <span>{lang==='en'?'humidity': 'Влажность'}: {weather?.toDay?.humidity}%</span>
         </div>
-
-
     }, [isLoading, weather])
 
     return (

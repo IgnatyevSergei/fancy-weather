@@ -1,11 +1,8 @@
-import React, {useCallback, useMemo} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {buttonSelector} from "../../../selectors/button-selector";
+import React from "react";
+import {useDispatch} from "react-redux";
 import Option from "../option/option";
 import "./language-selector.css";
 import {setLangAC} from "../../../actions/action-button";
-import {weatherSelector} from "../../../selectors/weather-selector";
-import {getWeatherForCity} from "../../../actions/action-weather";
 
 const data = [
     {id: 1, text: "en", value: "en"},
@@ -14,23 +11,14 @@ const data = [
 
 const LanguageSelector = () => {
     const dispatch = useDispatch();
-    const{lang, degrees}=useSelector(buttonSelector)
-    const{weather}=useSelector(weatherSelector)
-
-    console.log(lang, 'lang')
-    console.log(weather)
-
 
     const handleChangeLang = (e) => {
-
-
-        dispatch(setLangAC(e.target.value));
-
-        dispatch(getWeatherForCity(weather.city, lang, degrees))
+        const value = e.target.value
+        dispatch(setLangAC(value));
     }
 
     return (
-        <select  onChange={handleChangeLang} className="language-selector-wrapper">
+        <select onChange={handleChangeLang} className="language-selector-wrapper">
             {data.map(({id, text, value}) => {
                 return <Option value={value} text={text} key={id}/>;
             })}

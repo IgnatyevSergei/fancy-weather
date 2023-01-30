@@ -18,7 +18,7 @@ const WeatherToday = () => {
 
             return <div className='weather-today-wrapper'>
                 <div className='weather-today-block'>
-                    <div className='number'>{weather.toDay.temperature}</div>
+                    <div className='number'>{weather?.toDay?.temperature}</div>
                     <div className='information-block'>
                         <div className='information-block_degree-sign'>°</div>
                         <div className='information-block_cloud'><img src={Cloud} alt="" className='image-cloud'/></div>

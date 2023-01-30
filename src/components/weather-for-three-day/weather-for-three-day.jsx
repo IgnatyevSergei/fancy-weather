@@ -13,8 +13,8 @@ const content = useMemo(() => {
     }
     if (isLoading) {
         return
-    } if (weather.threeDays.length){
-        return weather.threeDays?.map((item) => {
+    } if (weather?.threeDays?.length){
+        return weather?.threeDays?.map?.((item) => {
                 return <WeatherForDay key={item.date} {...item} />;
             })}
 

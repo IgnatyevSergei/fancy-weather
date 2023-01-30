@@ -88,10 +88,12 @@ export const getWeatherForCity = (city, lang, degrees) => (dispatch) => {
     });
 };
 
-export const getCoordinate = (lang='en', degrees, dispatch) => {
+export const getCoordinate = (lang, degrees, dispatch) => {
   fetch("https://ipinfo.io/json?token=ba66afe740e93d").then(
       (response) => response.json()
   ).then(
       (jsonResponse) => dispatch(getWeatherForCity(jsonResponse.city, lang, degrees))
-  )
+  ).catch((err)=> {
+    dispatch(setIsHasErrorAC(err))
+  })
 }
