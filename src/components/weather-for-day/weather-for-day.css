@@ -1,25 +1,36 @@
-.weather-for-day-wrapper{
-    width: 160px;
-    height: 107px;
+.weather-for-day-wrapper {
+  width: 160px;
+  height: 107px;
 }
 
-.day{
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 27px;
-    text-transform: uppercase;
-    color: #FFFFFF;
+.day {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
-.temperature{
-    display: flex;
-    justify-content: space-between;
+.temperature {
+  display: flex;
+  justify-content: space-between;
 }
 
-.temperature-degrees{
-    font-weight: 600;
-    font-size: 80px;
-    line-height: 98px;
-    text-transform: uppercase;
-    color: #FFFFFF;
+.temperature-degrees {
+  font-weight: 600;
+  font-size: 80px;
+  line-height: 98px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.temperature-icon {
+  width: 68px;
+  height: 50px;
+}
+
+.iconWeather {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
 }

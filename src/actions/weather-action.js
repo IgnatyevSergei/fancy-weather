@@ -42,6 +42,7 @@ const transformWeatherData = (result) => {
       feelLike: Math.round(result.list[0].main.feels_like) ,
       wind: result.list[0].wind.speed,
       humidity: result.list[0].main.humidity,
+      icon: result.list[0].weather[0].icon
     },
     threeDays: [
       {
@@ -51,6 +52,7 @@ const transformWeatherData = (result) => {
         ],
         temperature: Math.round(result.list[secondDayIndex].main.temp),
         weather: result.list[secondDayIndex].weather[0].description,
+        icon:result.list[secondDayIndex].weather[0].icon
       },
       {
         date: new Date((result.list[thirdDayIndex].dt - 10800) * 1000),
@@ -59,6 +61,7 @@ const transformWeatherData = (result) => {
         ],
         temperature: Math.round(result.list[thirdDayIndex].main.temp),
         weather: result.list[thirdDayIndex].weather[0].description,
+        icon:result.list[thirdDayIndex].weather[0].icon
       },
       {
         date: new Date((result.list[fourthDayIndex].dt - 10800) * 1000),
@@ -67,6 +70,7 @@ const transformWeatherData = (result) => {
         ],
         temperature: Math.round(result.list[fourthDayIndex].main.temp),
         weather: result.list[fourthDayIndex].weather[0].description,
+        icon:result.list[fourthDayIndex].weather[0].icon
       },
     ],
   };

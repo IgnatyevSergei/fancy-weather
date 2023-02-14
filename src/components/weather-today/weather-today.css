@@ -43,4 +43,5 @@
 .image-cloud{
     width: 162px;
     height: 102px;
+    object-fit: cover;
 }
