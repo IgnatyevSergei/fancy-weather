@@ -9,7 +9,6 @@ const Controller = (props) => {
         height: height
     }
 
-
     return (
       <>
         <button

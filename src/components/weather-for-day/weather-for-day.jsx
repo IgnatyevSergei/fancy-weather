@@ -8,9 +8,6 @@ const WeatherForDay = (props) => {
     const {lang} = useSelector(buttonSelector)
     const options = { weekday: 'long'};
 
-    console.log(icon)
-
-
 
     return (
       <div className="weather-for-day-wrapper">

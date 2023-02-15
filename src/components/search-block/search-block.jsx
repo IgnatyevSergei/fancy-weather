@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getWeatherForCity } from "../../actions/weather-action";
 import { buttonSelector } from "../../selectors/button-selector";
 import Controller from "../common/controller";
+import {getBackground} from "../../actions/button-action";
 
 const SearchBlock = () => {
   const { lang, degrees } = useSelector(buttonSelector);
@@ -15,6 +16,7 @@ const SearchBlock = () => {
       return;
     }
     dispatch(getWeatherForCity(inputRef.current?.value, lang, degrees));
+    dispatch (getBackground())
   };
 
   return (
@@ -24,6 +26,7 @@ const SearchBlock = () => {
         onKeyDown={(e) => {
           if (e.keyCode === 13) {
             getData();
+            dispatch (getBackground())
           }
         }}
         ref={inputRef}
