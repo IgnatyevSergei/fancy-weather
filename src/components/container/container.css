@@ -1,0 +1,10 @@
+
+.container{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 1440px;
+    height: 800px;
+    background: no-repeat;
+    background-size: cover;
+}
